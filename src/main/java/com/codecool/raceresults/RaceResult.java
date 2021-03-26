@@ -75,5 +75,5 @@ class RaceResult {
         return "Schumacher => " + bestResultYearSch + ", " + worstResultYearSch + " " +
                 "Coultard => " + bestResultYearCou + ", " + worstResultYearCou + " " +
                 "Hakkinen => " + bestResultYearHak + ", " + worstResultYearHak;
-    }
+        }
     }
