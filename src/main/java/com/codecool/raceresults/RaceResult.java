@@ -30,54 +30,50 @@ class RaceResult {
         int bestResultYearHak = 0;
         int worstResultYearHak = 0;
 
-        try{
+        try {
 
             fr = new FileReader(fileName);
             reader = new BufferedReader(fr);
 
 
-
-            while(true) {
+            while (true) {
 
                 String line = reader.readLine();
-                if(line == null) {
+                if (line == null) {
                     break;
                 }
 
-                if(Integer.parseInt(line.split(",")[0]) < bestResultSch) {
+                if (Integer.parseInt(line.split(",")[0]) < bestResultSch) {
                     bestResultYearSch = Integer.parseInt(line.split(",")[3]);
                 }
-                if(Integer.parseInt(line.split(",")[0]) > worstResultSch) {
+                if (Integer.parseInt(line.split(",")[0]) > worstResultSch) {
                     bestResultYearSch = Integer.parseInt(line.split(",")[3]);
                 }
 
-                if(Integer.parseInt(line.split(",")[1]) < bestResultCou) {
+                if (Integer.parseInt(line.split(",")[1]) < bestResultCou) {
                     bestResultYearCou = Integer.parseInt(line.split(",")[3]);
                 }
-                if(Integer.parseInt(line.split(",")[1]) > worstResultCou) {
+                if (Integer.parseInt(line.split(",")[1]) > worstResultCou) {
                     bestResultYearCou = Integer.parseInt(line.split(",")[3]);
                 }
 
-                if(Integer.parseInt(line.split(",")[2]) < bestResultHak) {
+                if (Integer.parseInt(line.split(",")[2]) < bestResultHak) {
                     bestResultYearHak = Integer.parseInt(line.split(",")[3]);
                 }
-                if(Integer.parseInt(line.split(",")[2]) > worstResultHak) {
+                if (Integer.parseInt(line.split(",")[2]) > worstResultHak) {
                     bestResultYearHak = Integer.parseInt(line.split(",")[3]);
                 }
-
-
 
 
             }
 
 
-
-        } catch(IOException e) {
+        } catch (IOException e) {
             return "File not found!";
         }
 
-        return  "Schumacher => " + bestResultYearSch + ", " + worstResultYearSch + " " +
+        return "Schumacher => " + bestResultYearSch + ", " + worstResultYearSch + " " +
                 "Coultard => " + bestResultYearCou + ", " + worstResultYearCou + " " +
                 "Hakkinen => " + bestResultYearHak + ", " + worstResultYearHak;
-
+    }
     }
